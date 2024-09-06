@@ -7,4 +7,4 @@ The game consists of two buttons
 
 after completetion of game it will show the winner from the top of the web page.
 
-![image of tic-tac-toe game web page](images/game output picture.png).
+![image of tic-tac-toe game web page](images/game_output.png).
