@@ -39,4 +39,23 @@ body{
     border-radius: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
+    cursor: pointer;
+}
+.msg-container{
+    height: 20vmin;
+}
+.new-btn{
+    width: 15vmin;
+    height: 5vmin;
+    border-radius: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.msg{
+    font-size: 3rem;
+    color: red;
+}
+.hide{
+    display: none;
 }

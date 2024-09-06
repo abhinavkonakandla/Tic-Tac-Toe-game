@@ -1,5 +1,9 @@
 let boxes  = document.querySelectorAll(".box");
 let reset = document.querySelector(".reset-btn");
+let msg = document.querySelector(".msg");
+let newBtn = document.querySelector(".new-btn");
+let msgContainer = document.querySelector(".msg-container");
+
 
 let turnO = true;
 
@@ -25,14 +29,48 @@ boxes.forEach((box) => {
             turnO = true;
         }
         box.disabled = true;
+        winner();
     })
 })
+const showWinner = (winner)=>{
+    msg.innerText = `Congractulations, winner is ${winner}`;
+    msgContainer.classList.remove("hide");
+}
 
+const winner = () => {
+    for(let pattern of winPatterns){
+        const pos1 = boxes[pattern[0]].innerText;
+        const pos2 = boxes[pattern[1]].innerText;
+        const pos3 = boxes[pattern[2]].innerText;
+
+        if(pos1!= "" && pos2!=""&&pos3!="" ){
+            if(pos1 === pos2 && pos2 === pos3){
+                showWinner(pos1);
+            }
+        }
+    }
+};
+
+
+newBtn.addEventListener('click', ()=>{
+    boxes.forEach((box)=>{
+        if(box.innerText !== ''){
+            box.innerText = "";
+            box.disabled = false;
+            msgContainer.classList.add("hide");
+        }
+    })
+})
 
 reset.addEventListener('click', ()=>{
     boxes.forEach((box)=>{
-        box.textContent = " ";
+        if(box.innerText !== ''){
+            box.innerText = "";
+            box.disabled = false;
+            msgContainer.classList.add("hide");
+        }
     })
 })
+
 
 
